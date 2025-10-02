@@ -1,6 +1,8 @@
 package com.fitness.aiservice.service;
 
 import com.fitness.aiservice.model.Activity;
+import com.fitness.aiservice.model.Recommendation;
+import com.fitness.aiservice.repository.RecommendationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -13,6 +15,7 @@ public class ActivityMessageListener
 {
 
     private final ActivityAIService activityAIService;
+    private final RecommendationRepository  recommendationRepository;
 
     // By the help of kafka listener, in processActivity() method what ever data comes, it will map to Activity object
     // and the userId will print in the form of log
@@ -21,6 +24,7 @@ public class ActivityMessageListener
     public void processActivity(Activity activity)
     {
         log.info("Received activity for processing: {}", activity.getUserId());
-        activityAIService.generateRecommendation(activity);
+        Recommendation recommendation = activityAIService.generateRecommendation(activity);
+        recommendationRepository.save(recommendation);
     }
 }

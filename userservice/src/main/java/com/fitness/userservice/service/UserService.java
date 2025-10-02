@@ -39,7 +39,7 @@ public class UserService {
 
         Optional<User> userOptional = userRepository.findById(userId);
 
-        if(userOptional.isPresent())
+        if(!userOptional.isPresent())
         {
             throw new UserNotFoundException("User not found");
         }
