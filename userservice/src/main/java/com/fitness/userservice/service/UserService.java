@@ -24,10 +24,12 @@ public class UserService {
 
         if(userRepository.existsByEmail(request.getEmail()))
         {
-            throw new UserAlreadyExistsException("Email already exists");
+            User existingUser = userRepository.findByEmail(request.getEmail());
+            return UserConverter.UserToUserResponse(existingUser);
         }
 
         User user = UserConverter.UserRequestToUser(request);
+
         User savedUser = userRepository.save(user);
         return UserConverter.UserToUserResponse(savedUser);
     }
@@ -49,6 +51,6 @@ public class UserService {
 
     public Boolean existByUserId(String userId) {
         log.info("Calling User Service for {}", userId);
-        return userRepository.existsById(userId);
+        return userRepository.existsByKeycloakId(userId);
     }
 }

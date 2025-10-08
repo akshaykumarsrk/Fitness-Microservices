@@ -10,6 +10,7 @@ public class UserConverter {
         return User.builder()
                 .firstName(userRequest.getFirstName())
                 .lastName(userRequest.getLastName())
+                .keycloakId(userRequest.getKeycloakId())
                 .email(userRequest.getEmail())
                 .password(userRequest.getPassword())
                 .build();
@@ -20,6 +21,7 @@ public class UserConverter {
                 .id(user.getId())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
+                .keycloakId(user.getKeycloakId())
                 .email(user.getEmail())
                 .password(user.getPassword())
                 .createdAt(user.getCreatedAt())

@@ -23,6 +23,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    // we bring keycloak id here because now we have authorization server(keycloak) where users are created
+    private String keycloakId;
+
     @Column(unique = true)
     private String email;
 

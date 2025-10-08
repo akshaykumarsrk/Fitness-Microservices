@@ -1,4 +1,4 @@
-package com.fitness.userservice.dto.response;
+package com.fitness.gateway.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

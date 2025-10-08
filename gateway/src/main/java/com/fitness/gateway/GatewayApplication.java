@@ -10,4 +10,8 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0f03ffb (complete backend commit)
