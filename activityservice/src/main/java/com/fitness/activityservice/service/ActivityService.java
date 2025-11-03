@@ -30,18 +30,18 @@ public class ActivityService {
         }
 
         Activity activity = ActivityConverter.activityRequestToActivity(request);
-        activityRepository.save(activity);
+        Activity savedActivity = activityRepository.save(activity);
 
         // we are sending data to kafka
         try
         {
-            kafkaTemplate.send(topicName, activity.getUserId(), activity);
+            kafkaTemplate.send(topicName, savedActivity.getUserId(), savedActivity);
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
 
-        return ActivityConverter.activityToActivityResponse(activity);
+        return ActivityConverter.activityToActivityResponse(savedActivity);
     }
 }

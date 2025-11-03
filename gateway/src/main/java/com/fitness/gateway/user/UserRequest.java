@@ -1,4 +1,4 @@
-package com.fitness.userservice.dto.request;
+package com.fitness.gateway.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +15,6 @@ public class UserRequest {
     @NotBlank(message = "Email is required")
     @Email(message = "Invail email format")
     private String email;
-
     private String keycloakId;
 
     @NotBlank(message = "Password is required")
