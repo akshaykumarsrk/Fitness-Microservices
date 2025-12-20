@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Document(collation = "activities")   // because we are using MongoDB
+@Document(collection = "activities")   // because we are using MongoDB
 @Data
 @Builder
 @AllArgsConstructor
