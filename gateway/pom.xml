@@ -27,7 +27,15 @@
 		<url/>
 	</scm>
 	<properties>
+<<<<<<< HEAD
 		<java.version>17</java.version>
+=======
+<<<<<<< HEAD
+		<java.version>25</java.version>
+=======
+		<java.version>17</java.version>
+>>>>>>> 0f03ffb (complete backend commit)
+>>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -43,6 +51,14 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+>>>>>>> 0f03ffb (complete backend commit)
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway-server-webflux</artifactId>
@@ -51,6 +67,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -72,6 +89,19 @@
 
 
         <dependency>
+=======
+<<<<<<< HEAD
+
+		<dependency>
+=======
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+
+        <dependency>
+>>>>>>> 0f03ffb (complete backend commit)
+>>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>

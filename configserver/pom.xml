@@ -27,7 +27,15 @@
 		<url/>
 	</scm>
 	<properties>
+<<<<<<< HEAD
 		<java.version>17</java.version>
+=======
+<<<<<<< HEAD
+		<java.version>25</java.version>
+=======
+		<java.version>17</java.version>
+>>>>>>> 0f03ffb (complete backend commit)
+>>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>

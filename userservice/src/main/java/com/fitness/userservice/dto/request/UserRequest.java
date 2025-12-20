@@ -15,6 +15,7 @@ public class UserRequest {
     @NotBlank(message = "Email is required")
     @Email(message = "Invail email format")
     private String email;
+    private String keycloakId;
 
     private String keycloakId;
 
