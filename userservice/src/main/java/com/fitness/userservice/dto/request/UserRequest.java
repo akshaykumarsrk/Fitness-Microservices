@@ -17,8 +17,6 @@ public class UserRequest {
     private String email;
     private String keycloakId;
 
-    private String keycloakId;
-
     @NotBlank(message = "Password is required")
     @Size(min = 6, message = "Password must have atleast 6 characters")
     private String password;

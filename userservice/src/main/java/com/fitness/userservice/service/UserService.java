@@ -24,10 +24,6 @@ public class UserService {
 
         if(userRepository.existsByEmail(request.getEmail()))
         {
-<<<<<<< HEAD
-//            throw new UserAlreadyExistsException("Email already exists");
-=======
->>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
             User existingUser = userRepository.findByEmail(request.getEmail());
             return UserConverter.UserToUserResponse(existingUser);
         }

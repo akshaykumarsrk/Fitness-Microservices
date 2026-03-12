@@ -6,15 +6,12 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
-<<<<<<< HEAD
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 import java.util.List;
-=======
->>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
 
 @Configuration
 @EnableWebFluxSecurity
@@ -26,7 +23,6 @@ public class SecurityConfig
     {
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
-<<<<<<< HEAD
                 .authorizeExchange(exchange -> exchange.anyExchange().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
                 .build();
@@ -49,12 +45,4 @@ public class SecurityConfig
         source.registerCorsConfiguration("/api/v1/**", corsConfiguration);
         return source;
     }
-=======
-                .authorizeExchange(exchange ->
-                        exchange.anyExchange().authenticated())
-                .oauth2ResourceServer(oauth2 ->
-                        oauth2.jwt(Customizer.withDefaults()))
-                .build();
-    }
->>>>>>> 65e5e6f04cb6da8729f16b8c153f642faadfb8c3
 }
