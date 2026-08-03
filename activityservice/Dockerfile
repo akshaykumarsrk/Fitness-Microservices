@@ -10,6 +10,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
+COPY src/main/resources/aiven-ca.pem /app/aiven-ca.pem
 
 # Render assigns a dynamic port via $PORT — bind to it, falling back
 # to 8082 for local runs where $PORT isn't set.
