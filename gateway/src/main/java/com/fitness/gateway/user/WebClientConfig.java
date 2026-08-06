@@ -23,6 +23,9 @@ public class WebClientConfig {
     // we are exposing instance of web client in the whole application
     @Bean
     public WebClient userServiceWebClient(WebClient.Builder webClientBuilder) {
-        return webClientBuilder.baseUrl("http://USER-SERVICE").build();
+//        return webClientBuilder.baseUrl("http://USER-SERVICE").build();
+        return WebClient.builder()
+                .baseUrl("https://akshay-fitness-userservice.onrender.com")
+                .build();
     }
 }
