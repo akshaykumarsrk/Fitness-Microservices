@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
+import java.time.Duration;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j   // to see the flow of request by using logger object
@@ -24,7 +26,7 @@ public class UserValidationService {
                     .uri("/api/v1/users/{userId}/validate", userId)
                     .retrieve()
                     .bodyToMono(Boolean.class)
-                    .block();   // to block thread URI
+                    .block(Duration.ofSeconds(15));   // to block thread URI
         } catch (WebClientResponseException e)
         {
             e.printStackTrace();
